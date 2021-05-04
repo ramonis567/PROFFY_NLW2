@@ -8,9 +8,7 @@
 body {
   width: 100%;
   height: 100vh;
-  background-color: #8567ff;
-  overflow: hidden;
-  /* background: goldenrod; */
+  background-color: #8257E5;
 }
 
 #homepage {
@@ -26,8 +24,16 @@ body {
   margin-top: 8vh;
 }
 
+#container1 .subtitle {
+  max-width: 300px;
+  color: #D4C2FF; 
+  margin-top: 10px;
+  font-size: 30px;
+  font-weight: 400;
+}
+
 #homepage #container2 {
-  margin-top: 60px;
+  margin-top: 70px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -35,10 +41,14 @@ body {
 }
 
 #homepage #container2 .text {
- display: flex;
- align-items: center;
- justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #D4C2FF;
+}
 
+#container2 .text p {
+  margin-right: 10px;
 }
 
 #container2 .buttons {
@@ -74,9 +84,9 @@ body {
 }
 
 .btn1:hover {
-  background: #ae12f477;
+  background: #6842c2;
 }
 
 .btn2:hover {
-  background: #00eb6799;
+  background: #04BF58;
 }
