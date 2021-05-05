@@ -57,7 +57,11 @@ hr {
   margin: 10px 0 20px;
 }
 
-form #times-selection {
+form #times-selections {
+  width: 100%;
+}
+
+form .times-selection {
   width: 100%;
   display: grid;
   grid-template-columns: 5fr 3fr 3fr;

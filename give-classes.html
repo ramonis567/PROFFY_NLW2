@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="./styles/give-classes.css">
   <link rel="stylesheet" href="./styles/responsive.css">
   <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+  <script src="./scripts/addNewTimeField.js"></script>
   <title>Proffy | Estudar</title>
 </head>
 <body>
@@ -63,31 +64,34 @@
 
           <div class="times-header">
             <h1 class="category-title">Horários disponíveis</h1>
-            <button class="new-time" type="button">+ Novo horário</button>
+            <button class="new-time" type="button" id="add-new-time">+ Novo horário</button>
           </div>
           <hr />
-          <div id="times-selection">
-            <fieldset>
-              <legend>Dia da semana</legend>
-              <select name="day" id="day-selection" class="field">
-                <option value="" disabled>Selecione um dia</option>
-                <option value="1">Segunda-feira</option>
-                <option value="2">Terça-feira</option>
-                <option value="3">Quarta-feira</option>
-                <option value="4">Quinta-feira</option>
-                <option value="5">Sexta-feira</option>
-                <option value="6">Sábado</option>
-                <option value="7">Domingo</option>
-              </select>
-            </fieldset>
-            <fieldset>
-              <legend>Das</legend>
-              <input type="time" name="hours" id="hour-selection-start" class="field">
-            </fieldset>
-            <fieldset>
-              <legend>Até</legend>
-              <input type="time" name="hours" id="hour-selection-end" class="field">
-            </fieldset>
+
+          <div id="times-selections">
+            <div class="times-selection">
+              <fieldset>
+                <legend>Dia da semana</legend>
+                <select name="day" class="day-selection field">
+                  <option value="" disabled>Selecione um dia</option>
+                  <option value="1">Segunda-feira</option>
+                  <option value="2">Terça-feira</option>
+                  <option value="3">Quarta-feira</option>
+                  <option value="4">Quinta-feira</option>
+                  <option value="5">Sexta-feira</option>
+                  <option value="6">Sábado</option>
+                  <option value="7">Domingo</option>
+                </select>
+              </fieldset>
+              <fieldset>
+                <legend>Das</legend>
+                <input type="time" name="hours" class="hour-selection-start field">
+              </fieldset>
+              <fieldset>
+                <legend>Até</legend>
+                <input type="time" name="hours" class="hour-selection-end field">
+              </fieldset>
+            </div>
           </div>
 
           <div class="form-footer">
