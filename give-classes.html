@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/partials/header.css">
+  <link rel="stylesheet" href="./styles/give-classes.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <link rel="shortcut icon" href="./images/favicon.png" type="image/png">
+  <title>Proffy | Estudar</title>
+</head>
+<body>
+  <div id="page-study">
+    <header>
+      <a href="#">
+        <img src="./images/icons/back.svg" alt="Back">
+      </a>
+      <img src="./images/logo.svg" alt="Logo" id="logo">
+    </header>
+    <div id="content">
+      <section>
+        <h1 class="title">Que incrível que você quer dar aulas</h1>
+        <p class="subtitle">O primeiro passo é preencher o formulário abaixo</p>
+        <form action="">
+          <h1 class="category-title">Seus dados</h1>
+          <hr />
+          <fieldset>
+            <legend>Nome completo</legend>
+            <input type="text" name="name" class="field">
+          </fieldset>
+          <fieldset>
+            <legend>Imagem (Foto)</legend>
+            <input type="url" name="avatar" class="field">
+          </fieldset>
+          <fieldset>
+            <legend>Whatsapp</legend>
+            <input type="text" name="name" class="field">
+          </fieldset>
+          <fieldset>
+            <legend>Biografia</legend>
+            <textarea name="description" id="teacher-description" class="field" cols="30" rows="4">
+
+            </textarea>
+          </fieldset>
+
+          <h1 class="category-title">Sobre a aula</h1>
+          <hr />
+          <fieldset>
+            <legend>Matéria</legend>
+            <select name="subject" class="field">
+              <option value="" disabled>Selecione uma matéria</option>
+              <option value="1">Artes</option>
+              <option value="2">Matemática</option>
+              <option value="3">Português</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Custo Hora/Aula (Reais)</legend>
+            <input type="number" name="price" class="field">
+          </fieldset>
+
+          <div class="times-header">
+            <h1 class="category-title">Horários disponíveis</h1>
+            <button class="new-time" type="button">+ Novo horário</button>
+          </div>
+          <hr />
+          <div id="times-selection">
+            <fieldset>
+              <legend>Dia da semana</legend>
+              <select name="day" id="day-selection" class="field">
+                <option value="" disabled>Selecione um dia</option>
+                <option value="1">Segunda-feira</option>
+                <option value="2">Terça-feira</option>
+                <option value="3">Quarta-feira</option>
+                <option value="4">Quinta-feira</option>
+                <option value="5">Sexta-feira</option>
+                <option value="6">Sábado</option>
+                <option value="7">Domingo</option>
+              </select>
+            </fieldset>
+            <fieldset>
+              <legend>Das</legend>
+              <input type="time" name="hours" id="hour-selection-start" class="field">
+            </fieldset>
+            <fieldset>
+              <legend>Até</legend>
+              <input type="time" name="hours" id="hour-selection-end" class="field">
+            </fieldset>
+          </div>
+
+          <div class="form-footer">
+            <div class="info">
+              <img src="./images/icons/warning.svg" alt="warning">
+              <div class="warning-text">
+                <p>Importante!</p>
+                <p>Preencha todos os dados.</p>
+              </div>
+            </div>
+            <div>
+              <button type="submit" class="button">
+                Salvar cadastro
+              </button>
+            </div>
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</body>
+</html>
