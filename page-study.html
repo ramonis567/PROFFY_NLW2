@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles/page-study.css">
+  <link rel="stylesheet" href="./styles/responsive.css">
+  <title>Proffy | Estudar</title>
+</head>
+<body>
+  <div id="page-study">
+    <header>
+      <a href="#">
+        <img src="./images/icons/back.svg" alt="Back">
+      </a>
+      <img src="./images/logo.svg" alt="Logo" id="logo">
+    </header>
+    <div id="content">
+      <section>
+        <h1>Estes são os proffys disponíveis.</h1>
+        <form action="">
+          <fieldset>
+            <legend>Matéria</legend>
+            <select name="subjects" id="subject-selection" class="field">
+              <option value="1">Artes</option>
+              <option value="2">Matemática</option>
+              <option value="3">Português</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Dia da semana</legend>
+            <select name="date" id="date-selection" class="field">
+              <option value="1">Segunda-feira</option>
+              <option value="2">Terça-feira</option>
+              <option value="3">Quarta-feira</option>
+              <option value="4">Quinta-feira</option>
+              <option value="5">Sexta-feira</option>
+              <option value="6">Sábado</option>
+              <option value="7">Domingo</option>
+            </select>
+          </fieldset>
+          <fieldset>
+            <legend>Horário</legend>
+            <input type="time" name="hours" id="hour-selection" class="field">
+          </fieldset>
+        </form>
+      </section>
+      <main class="cards">
+        <div class="card">
+          <div class="card-header">
+            <img src="./images/landing.svg" alt="Avatar Image" class="avatar">
+            <div class="teacher-info">
+              <h2 class="teacher-name">Ramon Matos</h2>
+              <p class="subject">Matemática</p>
+            </div>
+          </div>
+          <div class="card-description">
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+              Iste, autem dolorum accusantium ducimus architecto distinctio 
+              vero. Odio eaque unde, vero perspiciatis illum voluptatibus 
+              sunt quod excepturi! Illo natus sed magni!
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="price">
+              <p>Preço/hora</p>
+              <h4 class="price-field">R$ 20,00</h4>
+            </div>
+            <div class="contact">
+              <a href="#" class="button">
+                <img src="./images/icons/whatsapp.svg" alt="">
+                <p>Entrar em contato</p>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-header">
+            <img src="./images/landing.svg" alt="Avatar Image" class="avatar" width="80px">
+            <div class="teacher-info">
+              <h2 class="teacher-name">Ramon Ferreira</h2>
+              <p class="subject">Artes</p>
+            </div>
+          </div>
+          <div class="card-description">
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+              Illum rem libero corporis nihil ipsam tempora non sunt 
+              repellendus, consequuntur nostrum hic voluptatum quidem 
+              eveniet omnis et nisi, facilis delectus magnam?
+            </p>
+          </div>
+          <div class="card-footer">
+            <div class="price">
+              <p>Preço/hora</p>
+              <h4 class="price-field">R$ 30,00</h4>
+            </div>
+            <div class="contact">
+              <a href="#">
+                <img src="./images/icons/whatsapp.svg" alt="">
+                <p>Entrar em contato</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+</body>
+</html>

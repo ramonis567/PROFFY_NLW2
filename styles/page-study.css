@@ -1,0 +1,153 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Lato', Arial, Helvetica, sans-serif;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #31313122;
+}
+
+body::after {
+  content: "";
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 225px;
+  background: #8257E5;
+}
+
+header {
+  width: 80%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header #logo {
+  height: 25px;
+}
+
+#content {
+  max-width: 650px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+#content section h1 {
+  width: 50%;
+  color: white;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+#content section form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#content section form fieldset {
+  width: 200px;
+  border: 0;
+  color: #D4C2FF;
+  font-size: 15px;
+}
+
+#content section form fieldset legend {
+  margin-bottom: 6px;
+}
+
+#content section form fieldset .field {
+  width: 100%;
+  border: 0;
+  border-radius: 6px;
+  color: gray;
+  font-size: 16px;
+  padding: 15px 9px;
+  background: white;
+}
+
+#content .cards {
+  margin-top: 40px;
+}
+
+#content .cards .card {
+  width: 100%;
+  margin-bottom: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  color: #808080;
+}
+
+#content .cards .card .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 15px;
+}
+
+#content .cards .card .card-header .avatar {
+  border: 1px solid black;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.card-header .teacher-info .teacher-name {
+  font-size: 22px;
+  color: #1c0550;
+}
+
+.card-header .teacher-info .teacher-name {
+  font-size: 18px;
+}
+
+.card-description p {
+  margin-top: 8px;
+  margin-bottom: 30px;
+  line-height: 25px;
+  font-size: 17px;
+}
+
+.card-footer {
+  padding: 18px 0;
+  /* padding-top: 20px; */
+  border-top: 1px solid #8080802f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-footer .price {
+  display: flex;
+  align-items: center;
+}
+
+.card-footer .price p {
+  margin-right: 8px;
+  opacity: 80%;
+  font-size: 14px;
+}
+
+.card-footer .price .price-field {
+  color: #8257E5;
+  font-size: 16px;
+}
+
+.card-footer .contact .button {
+  display: flex;
+  padding: 10px 25px;
+  background-color: #00eb67;
+}
