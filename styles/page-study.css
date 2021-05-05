@@ -55,7 +55,7 @@ header #logo {
 }
 
 #content section form fieldset {
-  width: 200px;
+  min-width: 180px;
   border: 0;
   color: #D4C2FF;
   font-size: 15px;
@@ -73,6 +73,29 @@ header #logo {
   font-size: 16px;
   padding: 15px 9px;
   background: white;
+  cursor: pointer;
+  /* outline: 0; */
+  outline-color: #00eb67;
+  outline-width: 1px;
+}
+
+#content section form .submit-btn {
+  width: 60px;
+  margin-top: 25px;
+  padding: 16px 2px 21px 2px;
+  border: 0;
+  border-radius: 4px;
+  background-color: #00eb67;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.6s ease;
+  text-shadow: 1px 1px 1px #1c0550;
+}
+
+.submit-btn:hover {
+  transform: scale(1.02);
+  opacity: 88%;
 }
 
 #content .cards {
@@ -98,7 +121,6 @@ header #logo {
 }
 
 #content .cards .card .card-header .avatar {
-  border: 1px solid black;
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -123,7 +145,6 @@ header #logo {
 
 .card-footer {
   padding: 18px 0;
-  /* padding-top: 20px; */
   border-top: 1px solid #8080802f;
   display: flex;
   justify-content: space-between;
@@ -148,6 +169,21 @@ header #logo {
 
 .card-footer .contact .button {
   display: flex;
-  padding: 10px 25px;
+  padding: 14px 25px;
+  border-radius: 8px;
   background-color: #00eb67;
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  transition: 0.6s ease;
+}
+
+.button:hover {
+  transform: scale(1.02);
+  opacity: 70%;
+}
+
+.card-footer .contact .button img {
+  margin-right: 8px;
 }
