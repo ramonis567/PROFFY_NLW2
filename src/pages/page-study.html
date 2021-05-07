@@ -52,65 +52,45 @@
           <button type="submit" class="submit-btn">Filtrar</button>
         </form>
       </section>
+
       <main class="cards">
-        <div class="card">
-          <div class="card-header">
-            <img src="./images/landing.svg" alt="Avatar Image" class="avatar">
-            <div class="teacher-info">
-              <h2 class="teacher-name">Ramon Matos</h2>
-              <p class="subject">Matemática</p>
+        {% if hasProffys  %}
+          {% for proffy in proffys %}
+            <div class="card">
+              <div class="card-header">
+                <img src="{{ proffy.avatar }}" alt="{{ proffy.name }} Image" class="avatar">
+                <div class="teacher-info">
+                  <h2 class="teacher-name">{{ proffy.name }}</h2>
+                  <p class="subject">{{ proffy.subject }}</p>
+                </div>
+              </div>
+              <div class="card-description">
+                <p>
+                  {{ proffy.bio }}
+                </p>
+              </div>
+              <div class="card-footer">
+                <div class="price">
+                  <p>Preço/hora</p>
+                  <h4 class="price-field">R$ {{ proffy.cost }}</h4>
+                </div>
+                <div class="contact">
+                  <a 
+                    href="https://api.whatsapp.com/send?phone=55{{ proffy.whatsapp }}&text=Vi o seu perfil no Proffy, tenho interesse na sua aula de {{ proffy.subject }}, {{ proffy.name }}." 
+                    class="button"
+                    target="_blank"
+                  >
+                    <img src="./images/icons/whatsapp.svg" alt="whatsapp">
+                    <p>Entrar em contato</p>
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="card-description">
-            <p>
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-              Iste, autem dolorum accusantium ducimus architecto distinctio 
-              vero. Odio eaque unde, vero perspiciatis illum voluptatibus 
-              sunt quod excepturi! Illo natus sed magni!
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="price">
-              <p>Preço/hora</p>
-              <h4 class="price-field">R$ 20,00</h4>
-            </div>
-            <div class="contact">
-              <a href="#" class="button">
-                <img src="./images/icons/whatsapp.svg" alt="whatsapp">
-                <p>Entrar em contato</p>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <img src="./images/landing.svg" alt="Avatar Image" class="avatar" width="80px">
-            <div class="teacher-info">
-              <h2 class="teacher-name">Ramon Ferreira</h2>
-              <p class="subject">Artes</p>
-            </div>
-          </div>
-          <div class="card-description">
-            <p>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-              Illum rem libero corporis nihil ipsam tempora non sunt 
-              repellendus, consequuntur nostrum hic voluptatum quidem 
-              eveniet omnis et nisi, facilis delectus magnam?
-            </p>
-          </div>
-          <div class="card-footer">
-            <div class="price">
-              <p>Preço/hora</p>
-              <h4 class="price-field">R$ 30,00</h4>
-            </div>
-            <div class="contact">
-              <a href="#" class="button">
-                <img src="./images/icons/whatsapp.svg" alt="whatsapp">
-                <p>Entrar em contato</p>
-              </a>
-            </div>
-          </div>
-        </div>
+          {% endfor %}
+        {% else %}
+          <h2>Nenhum professor encontrado!</h2>  
+        {% endif %}
+          
       </main>
     </div>
   </div>
