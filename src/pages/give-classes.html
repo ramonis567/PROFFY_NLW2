@@ -29,19 +29,19 @@
           <hr />
           <fieldset>
             <legend>Nome completo</legend>
-            <input type="text" name="name" class="field">
+            <input type="text" name="name" class="field" required>
           </fieldset>
           <fieldset>
             <legend>Imagem (Foto)</legend>
-            <input type="url" name="avatar" class="field">
+            <input type="url" name="avatar" class="field" required>
           </fieldset>
           <fieldset>
             <legend>Whatsapp</legend>
-            <input type="text" name="name" class="field">
+            <input type="text" name="whatsapp" class="field" required>
           </fieldset>
           <fieldset>
             <legend>Biografia</legend>
-            <textarea name="description" id="teacher-description" class="field" cols="30" rows="4">
+            <textarea name="bio" id="teacher-description" class="field" cols="30" rows="4" required>
 
             </textarea>
           </fieldset>
@@ -50,16 +50,16 @@
           <hr />
           <fieldset>
             <legend>Matéria</legend>
-            <select name="subject" class="field">
+            <select name="subject" class="field" required>
               <option value="" disabled>Selecione uma matéria</option>
-              <option value="1">Artes</option>
-              <option value="2">Matemática</option>
-              <option value="3">Português</option>
+              {% for subject in subjects %}
+                <option value="{{loop.index}}">{{subject}}</option>
+              {% endfor %}
             </select>
           </fieldset>
           <fieldset>
             <legend>Custo Hora/Aula (Reais)</legend>
-            <input type="number" name="price" class="field">
+            <input type="number" name="cost" class="field" required>
           </fieldset>
 
           <div class="times-header">
@@ -72,24 +72,20 @@
             <div class="times-selection">
               <fieldset>
                 <legend>Dia da semana</legend>
-                <select name="day" class="day-selection field">
+                <select name="weekday" class="day-selection field" required>
                   <option value="" disabled>Selecione um dia</option>
-                  <option value="1">Segunda-feira</option>
-                  <option value="2">Terça-feira</option>
-                  <option value="3">Quarta-feira</option>
-                  <option value="4">Quinta-feira</option>
-                  <option value="5">Sexta-feira</option>
-                  <option value="6">Sábado</option>
-                  <option value="7">Domingo</option>
+                  {% for weekday in weekdays %}
+                    <option value="{{loop.index}}">{{weekday}}</option>
+                  {% endfor %} 
                 </select>
               </fieldset>
               <fieldset>
                 <legend>Das</legend>
-                <input type="time" name="hours" class="hour-selection-start field">
+                <input type="time" name="time_from" class="hour-selection-start field" required>
               </fieldset>
               <fieldset>
                 <legend>Até</legend>
-                <input type="time" name="hours" class="hour-selection-end field">
+                <input type="time" name="time_to" class="hour-selection-end field" required>
               </fieldset>
             </div>
           </div>
