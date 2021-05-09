@@ -68,7 +68,7 @@ server.get("/give-classes", (req, res) => {
     //   data.weekday = getWeekday(data.weekday);
     // }
     console.log(data.weekday);
-    proffys.push(data)
+    proffys.push(data);
     return res.redirect("/study");
   }
 
