@@ -29,7 +29,7 @@ Database.then(async (db) => {
       time_to: 900,
     }
   ];
-
+  // ------------------ 
   // await createProffy (db, {proffyValue, classValue, classScheduleValues});
 
   // const selectedProffys = await db.all("SELECT * FROM proffys");
