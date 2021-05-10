@@ -30,5 +30,26 @@ Database.then(async (db) => {
     }
   ];
 
-  await createProffy (db, {proffyValue, classValue, classScheduleValues});
+  // await createProffy (db, {proffyValue, classValue, classScheduleValues});
+
+  // const selectedProffys = await db.all("SELECT * FROM proffys");
+  // console.log(selectedProffys);
+
+  // const selectedClasses = await db.all("SELECT * FROM classes");
+  // console.log(selectedClasses);
+
+  // const selectedClassSchedules = await db.all("SELECT * FROM class_schedule");
+  // console.log(selectedClassSchedules);
+
+  // const selectClassesAndProffys = await db.all(`
+  //   SELECT classes.*, proffys.*
+  //   FROM proffys
+  //   JOIN classes ON (classes.proffy_id = proffys.id)
+  //   WHERE classes.proffy_id = 1;
+  // `);
+
+  // console.log(selectClassesAndProffys);
+
+  
+
 });
