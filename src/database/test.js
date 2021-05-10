@@ -50,6 +50,4 @@ Database.then(async (db) => {
 
   // console.log(selectClassesAndProffys);
 
-  
-
 });
