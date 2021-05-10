@@ -1,7 +1,7 @@
 const Database = require("./db.js");
 const createProffy = require("./createProffy.js");
 
-Database.then((db) => {
+Database.then(async (db) => {
   proffyValue = {
     name: "Jane Santos",
     avatar: "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-7-avatar-2754582_120519.png",
@@ -10,12 +10,12 @@ Database.then((db) => {
   };
 
   classValue = {
-    subject = "Filosofia",
+    subject: "Filosofia",
     cost: 30,
     // proffy_id
   };
 
-  classScheduleValue = [
+  classScheduleValues = [
     {
       // class_id
       weekday: 1, 
@@ -30,5 +30,5 @@ Database.then((db) => {
     }
   ];
 
-
+  await createProffy (db, {proffyValue, classValue, classScheduleValues});
 });
