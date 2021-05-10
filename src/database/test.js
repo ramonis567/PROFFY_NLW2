@@ -1,0 +1,34 @@
+const Database = require("./db.js");
+const createProffy = require("./createProffy.js");
+
+Database.then((db) => {
+  proffyValue = {
+    name: "Jane Santos",
+    avatar: "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-7-avatar-2754582_120519.png",
+    whatsapp: "33999995555",
+    bio : "Lorem ipsum!",
+  };
+
+  classValue = {
+    subject = "Filosofia",
+    cost: 30,
+    // proffy_id
+  };
+
+  classScheduleValue = [
+    {
+      // class_id
+      weekday: 1, 
+      time_from: 720, 
+      time_to: 810,
+    },
+    {
+      // class_id     
+      weekday: 2, 
+      time_from: 720, 
+      time_to: 900,
+    }
+  ];
+
+
+});
