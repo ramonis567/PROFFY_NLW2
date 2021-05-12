@@ -1,38 +1,6 @@
-const proffys = [
-  {
-    name: "Ramon Matos",
-    avatar: "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-7-avatar-2754582_120519.png",
-    subject: "Matemática", 
-    bio : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, autem dolorum accusantium ducimus architecto distinctio vero. Odio eaque unde, vero perspiciatis illum voluptatibus sunt quod excepturi! Illo natus sed magni!",
-    cost: "20",
-    whatsapp: "33988928922",
-    weekday: [2,3,4,5,6], 
-    time_from: [720, 720, 720, 720, 720], 
-    time_to: [810, 810, 810, 810, 810]
-  },
-  {
-    name: "Ramon Ferreira",
-    avatar: "https://cdn.icon-icons.com/icons2/1879/PNG/512/iconfinder-7-avatar-2754582_120519.png",
-    subject: "Química", 
-    bio : "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste, autem dolorum accusantium ducimus architecto distinctio vero. Odio eaque unde, vero perspiciatis illum voluptatibus sunt quod excepturi! Illo natus sed magni!",
-    cost: "40",
-    whatsapp: "33988928922",
-    weekday: [1,3,4,5,6], 
-    time_from: [720, 720, 720, 720, 720], 
-    time_to: [810, 810, 810, 810, 810]
-  },
-];
-const subjects = ["Artes", "Biologia", "Ciências", "Educação Física", "Espanhol", "Física", "Filosofia", "Geografia", "História", "Inglês", "Matemática", "Português", "Química", "Sociologia"];
-const weekdays = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"];
-const hasProffys = proffys.length > 0;
+const { subjects, weekdays, getSubject, hasProffys, hasNotProffys, transformHoursToMinutes } = require("./utils/format.js");
 
-function getSubject(subjectIndex) {
-  return subjects[subjectIndex - 1];
-}
-
-// function getWeekday(weekdayIndex) {
-//   return weekdays[weekdayIndex - 1];
-// }
+const Database = require("./database/db.js");
 
 const express = require("express");
 const server = express();
@@ -51,9 +19,70 @@ server.get("/", (req, res) => {
   return res.render("index.html");
 });
 
+// async function awaitDatabase(database, query){
+//   const db = await database;
+//   const proffys = await db.all(query);
+
+//   proffys
+
+//   return proffys;
+// }
+
 server.get("/study", (req, res) => {
   const filters = req.query;
-  return res.render("page-study.html", { hasProffys, proffys, filters, subjects, weekdays });
+
+  if((!filters.subject)||(!filters.weekday)||(!filters.hours)){
+    console.log("Campos vazios");
+    return res.render("page-study.html", { hasNotProffys, filters, subjects, weekdays });
+  } else {
+    filters.hours = transformHoursToMinutes(filters.hours);
+    
+    const query = `
+      SELECT classes.*, proffys.*
+      FROM proffys
+      JOIN classes ON (classes.proffy_id = proffys.id)
+      WHERE EXISTS(
+        SELECT class_schedule.*
+        FROM class_schedule
+        WHERE class_schedule.class_id = classes.id
+        AND class_schedule.weekday = ${filters.weekday}
+        AND class_schedule.time_from <= ${filters.hours}
+        AND class_schedule.time_to > ${filters.hours}
+      )
+      AND classes.subject = "${filters.subject}"
+    `;
+    
+    try {
+      // awaitDatabase(Database, query);
+      //const db = Database;
+      //db.then
+      //console.log(proffys);
+      if(proffys == []){
+        return res.render("page-study.html", { hasNotProffys, filters, subjects, weekdays });
+      } else {
+        return res.render("page-study.html", { hasProffys, proffys, filters, subjects, weekdays });
+      }
+    } catch (error) {
+      console.log(error);
+    }
+
+  }
+
+  // const query = `
+  // SELECT classes.*, proffys.*
+  //   FROM proffys
+  //   JOIN classes ON (classes.proffy_id = proffys.id)
+  //   WHERE EXISTS(
+  //     SELECT class_schedule.*
+  //     FROM class_schedule
+  //     WHERE class_schedule.class_id = classes.id
+  //     AND class_schedule.weekday = ${filters.weekday}
+  //     AND class_schedule.time_from <= ${filters.hours}
+  //     AND class_schedule.time_to > ${filters.hours}
+  //   )
+  // `;
+
+  // return res.render("page-study.html", { hasProffys, proffys, filters, subjects, weekdays });
 });
 
 server.get("/give-classes", (req, res) => {
@@ -63,7 +92,7 @@ server.get("/give-classes", (req, res) => {
   if(hasData){
     data.subject = getSubject(data.subject);
 
-    // tam = data.weekday.length;
+    // let tam = data.weekday.length;
     // for(let i = 0; i <= tam; i++){
     //   data.weekday = getWeekday(data.weekday);
     // }
