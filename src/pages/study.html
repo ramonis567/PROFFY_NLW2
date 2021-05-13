@@ -50,7 +50,9 @@
       </section>
 
       <main class="cards">
-        {% if hasProffys  %}
+        {% if proffys = "" %}
+          <h2>Nenhum professor encontrado!</h2>
+        {% else %}
           {% for proffy in proffys %}
             <div class="card">
               <div class="card-header">
@@ -84,10 +86,7 @@
             </div>
           {% endfor %}
         {% endif %}
-        {% if hasNotProffys %}
-          <h2>Nenhum professor encontrado!</h2>  
-        {% endif %}
-          
+                  
       </main>
     </div>
   </div>
