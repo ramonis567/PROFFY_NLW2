@@ -34,15 +34,19 @@ async function renderPageStudy(req, res){
       proffy.subject = getSubject(proffy.subject)
     });
 
-    if(proffys.length = 0){
-      console.log("Nenhum professor");
-      return res.render("study.html", { filters, subjects, weekdays });
-    }
-    else {
-      console.log("Há professores");
-      console.log(proffys);
-      return res.render("study.html", { proffys, filters, subjects, weekdays });
-    } 
+    console.log(proffys);
+
+    return res.render("study.html", { proffys, filters, subjects, weekdays });
+
+    // if(proffys.length = 0){
+    //   console.log("Nenhum professor");
+    //   return res.render("study.html", { filters, subjects, weekdays });
+    // }
+    // else {
+    //   console.log("Há professores");
+    //   console.log(proffys);
+    //   return res.render("study.html", { proffys, filters, subjects, weekdays });
+    // } 
   } catch (error) {
     console.log(error);
   }

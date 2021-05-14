@@ -27,12 +27,13 @@ const subjects = ["Artes", "Biologia", "Ciências", "Educação Física", "Espan
 const weekdays = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira", "Sábado", "Domingo"];
 
 function getSubject(subjectIndex) {
-  return subjects[subjectIndex - 1];
+  return subjects[subjectIndex];
 }
 
 function transformHoursToMinutes(hours){
   const [hour, minutes] = hours.split(":");
   const totalMinutes = Number(hour*60) + Number(minutes);
+  console.log("Minutos totais:", totalMinutes)
   return (totalMinutes);
 }
 

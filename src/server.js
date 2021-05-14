@@ -17,9 +17,7 @@ server.get("/", (req, res) => {
 });
 
 server.get("/study", renderPageStudy);
-  
 server.get("/give-classes", renderGiveClasses);
-
 server.post("/save-classes", renderSaveClasses);
 
 server.listen(port);

@@ -39,7 +39,7 @@ Database.then(async (db) => {
   // console.log(selectedClasses);
 
   const selectedClassSchedules = await db.all("SELECT * FROM class_schedule");
-  // console.log(selectedClassSchedules);
+  //console.log(selectedClassSchedules);
 
   const selectClassesAndProffys = await db.all(`
     SELECT classes.*, proffys.*
@@ -47,7 +47,7 @@ Database.then(async (db) => {
     JOIN classes ON (classes.proffy_id = proffys.id)
     WHERE classes.proffy_id = "1"
   `);
-  // console.log(selectClassesAndProffys);
+  //console.log(selectClassesAndProffys);
 
   const selectClassesSchedules = await db.all(`
     SELECT class_schedule.*
