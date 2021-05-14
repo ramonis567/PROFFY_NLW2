@@ -33,20 +33,7 @@ async function renderPageStudy(req, res){
     proffys.map((proffy) => {
       proffy.subject = getSubject(proffy.subject)
     });
-
-    console.log(proffys);
-
     return res.render("study.html", { proffys, filters, subjects, weekdays });
-
-    // if(proffys.length = 0){
-    //   console.log("Nenhum professor");
-    //   return res.render("study.html", { filters, subjects, weekdays });
-    // }
-    // else {
-    //   console.log("Há professores");
-    //   console.log(proffys);
-    //   return res.render("study.html", { proffys, filters, subjects, weekdays });
-    // } 
   } catch (error) {
     console.log(error);
   }
@@ -69,18 +56,16 @@ async function renderSaveClasses (req, res) {
   const classValue = {
     subject: req.body.subject,
     cost: req.body.cost
-    // proffy_id => function createProffy
   };
 
-  const classScheduleValues = req.body.weekday.map((weekday, index) => {
-      return {
-        // class_id => function createProffy
-        weekday: weekday, 
-        time_from: transformHoursToMinutes(req.body.time_from[index]), 
-        time_to: transformHoursToMinutes(req.body.time_to[index]),
-      }  
-    } 
-  );
+  const classScheduleValues = req.body.weekday.map(function(weekday, index) {
+    return {
+      weekday, 
+      time_from: transformHoursToMinutes(req.body.time_from[index]), 
+      time_to: transformHoursToMinutes(req.body.time_to[index]),
+    }
+  });
+
 
   try {
     const db = await Database;
